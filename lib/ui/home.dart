@@ -23,7 +23,7 @@ class _QuizAppState extends State<QuizApp> {
             Image.asset(
               "images/1.1 flag.png",
               width: 250,
-              height: 180,
+              height: 400,
             )
           ],
         ),
