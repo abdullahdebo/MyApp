@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:myapp/model/question.dart';
 
 class QuizApp extends StatefulWidget {
   @override
@@ -8,23 +9,36 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizAppState extends State<QuizApp> {
+  List questionBank = [
+    Question.name("is villa play for zaragoza?", true),
+    Question.name("is messi play for valencia?", false),
+    Question.name("is benzima play for granada?", false),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("True Citizen"),
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.blueGrey,
       ),
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.blueGrey,
       body: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset(
-              "images/1.1 flag.png",
-              width: 250,
-              height: 400,
-            )
+            Center(
+              child: Image.asset(
+                "images/1.1 flag.png",
+                width: 250,
+                height: 180,
+              ),
+            ),
+            Container(
+              height: 120.0,
+              child: Text(questionBank[0].questionText),
+            ),
+            Spacer()
           ],
         ),
       ),
